@@ -11,7 +11,7 @@
 
         public function __construct()
         {
-            $this->servidor = "localhost";//local
+            //$this->servidor = "localhost";//local
             $this->servidor = "";//server
             $this->usuario = "root";
             //$this->contrasena = "";//local
