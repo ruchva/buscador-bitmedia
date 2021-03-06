@@ -11,9 +11,11 @@
 
         public function __construct()
         {
-            $this->servidor = "localhost";
+            $this->servidor = "localhost";//local
+            $this->servidor = "";//server
             $this->usuario = "root";
-            $this->contrasena = "rubenCh1ara";
+            //$this->contrasena = "";//local
+            $this->contrasena = "rubenCh1ara";//server
             $this->basedatos = "buscador";
         }
 
