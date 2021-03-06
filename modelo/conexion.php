@@ -20,7 +20,7 @@
 
         function conectar(){
             $this->conexion = new mysqli(
-                                        //$this->servidor, 
+                                        $this->servidor, 
                                         $this->usuario, 
                                         $this->contrasena, 
                                         $this->basedatos);
