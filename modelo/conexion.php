@@ -13,7 +13,7 @@
         {
             $this->servidor = "localhost";
             $this->usuario = "root";
-            $this->contrasena = "";
+            $this->contrasena = "rubenCh1ara";
             $this->basedatos = "buscador";
         }
 
