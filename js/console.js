@@ -84,14 +84,14 @@ function limpiarNuevoConcepto(){
 //save with ajax perrra!!!
 $(document).ready(function() {
 
-    $('#guardar').on('click', function() {
-        var concepto = $('#concepto-new').val();
+    $("#guardar").on('click', function() {
+        var concepto = $("#concepto-new").val();
         if(concepto!="") {
             $.ajax({
                 url: "../controlador/insertar_concepto.php",
                 type: "POST",
                 data: {
-                    'concepto-new': concepto                       			
+                    "concepto-new": concepto                       			
                 },
                 cache: false,
                 success: function(msg){
@@ -105,7 +105,7 @@ $(document).ready(function() {
                 }
             });
         } else {
-            alert('DEBE REDACTAR EL CONCEPTO');
+            alert("DEBE REDACTAR EL CONCEPTO");
         }
     });
 
