@@ -48,7 +48,7 @@ function concatenaInicio() {
     var nuevo = $("#concepto option:selected").text();
     var anterior = $("#concepto-res").val();
     if(anterior!=""){
-        var espacio_blanco = ", ";
+        var espacio_blanco = "; ";
     } else {
         var espacio_blanco = " ";
     }
@@ -63,7 +63,7 @@ function concatenaFinal() {
     var nuevo = $("#concepto option:selected").text();
     var anterior = $("#concepto-res").val();
     if(anterior!=""){
-        var espacio_blanco = ", ";
+        var espacio_blanco = "; ";
     } else {
         var espacio_blanco = "";
     }
@@ -96,7 +96,7 @@ $(document).ready(function() {
                 cache: false,
                 success: function(msg){
                     var concepto_anterior = $("#concepto-res").val();
-                    var concepto_nuevo = $.trim(concepto_anterior)+", " + concepto;
+                    var concepto_nuevo = $.trim(concepto_anterior)+"; " + concepto;
                     $("#concepto-res").val(concepto_nuevo);
                     alert("AGREGADO CORRECTAMENTE");
                 },
