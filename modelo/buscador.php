@@ -28,7 +28,7 @@
         function insertar_concepto($concepto)
         {
             $sql = "INSERT INTO declaraciones (`declaraciones`, `fecha_creacion`, `usuario_creacion`) 
-                    VALUES ('$concepto', "."'".date('d/m/Y')."'".", 'APP')";
+                    VALUES ('$concepto', CURRENT_DATE(), 'APP')";
             
             if($this->conexion->conexion->query($sql) === TRUE ) {
                 echo "CORRECTO!!!";
