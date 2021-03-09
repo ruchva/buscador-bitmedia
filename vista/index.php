@@ -70,6 +70,25 @@
             </div>
         </div>
     </div>
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-header">
+            </div>
+            <div class="card-body">
+                <form id="elimina-concepto" name="elimina-concepto" method="POST">
+                    <div class="row">
+                        <div class="col-lg-8">
+                            <label for="concepto">ELIMINAR CONCEPTO</label>
+                            <select class="js-example-basic-single" name="concepto-del" id="concepto-del" style="width: 100%">
+                            </select>
+                        </div>                    
+                    </div>
+                    <br />
+                    <input type="button" id="eliminar" value="ELIMINAR" class="btn btn-primary" />
+                </form>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

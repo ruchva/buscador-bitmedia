@@ -14,9 +14,11 @@ function listarConceptos() {
                 cadena += "<option value='"+data[i][0]+"'>"+data[i][1]+"</option>";                
             }
             $("#concepto").html(cadena);            
+            $("#concepto-del").html(cadena);            
         } else {
             cadena +="<option>NO SE ENCONTRARON REGISTROS</option>";
             $("#concepto").html(cadena);
+            $("#concepto-del").html(cadena);
         }
     })
 
@@ -81,6 +83,34 @@ function limpiarNuevoConcepto(){
     $("#concepto-new").val('');        
 }
 
+//delete with ajax perrra!!!
+$(document).ready(function() {
+
+    $("#eliminar").on('click', function() {
+        var id_concepto = $("#concepto-del").val();
+        if(id_concepto!="") {
+            $.ajax({
+                url: "../controlador/eliminar_concepto.php",
+                type: "POST",
+                data: {
+                    "concepto-del": id_concepto                       			
+                },
+                cache: false,
+                success: function(msg){
+                    alert("SE ELIMINO EL CONCEPTO");
+                    window.location.reload();
+                },
+                error: function(msg){
+                    alert("OCURRIO UN ERROR "+ msg.d.toString());
+                }
+            });
+        } else {
+            alert("DEBE SELECCIONAR UN CONCEPTO");
+        }
+    });
+
+});
+
 //save with ajax perrra!!!
 $(document).ready(function() {
 
@@ -91,14 +121,20 @@ $(document).ready(function() {
                 url: "../controlador/insertar_concepto.php",
                 type: "POST",
                 data: {
-                    "concepto-new": concepto                       			
+                    "concepto-new": concepto.toUpperCase()                       			
                 },
                 cache: false,
                 success: function(msg){
                     var concepto_anterior = $("#concepto-res").val();
-                    var concepto_nuevo = $.trim(concepto_anterior)+"; " + concepto;
+                    if(concepto_anterior!=""){
+                        var espacio_blanco = "; ";
+                    } else {
+                        var espacio_blanco = "";
+                    }
+                    var concepto_nuevo = $.trim(concepto_anterior)+ espacio_blanco + concepto;
                     $("#concepto-res").val(concepto_nuevo);
                     alert("AGREGADO CORRECTAMENTE");
+                    window.location.reload();
                 },
                 error: function(msg){
                     alert("OCURRIO UN ERROR "+ msg.d.toString());
@@ -110,4 +146,3 @@ $(document).ready(function() {
     });
 
 });
-

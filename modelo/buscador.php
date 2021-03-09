@@ -11,6 +11,9 @@
             $this->conexion->conectar();
         }
 
+        /**
+         * listar conceptos
+         */
         function listar_combo_busqueda()
         {
             $sql = "call SP_LISTAR_COMBO_BUSQUEDA";
@@ -25,6 +28,9 @@
             }
         }
         
+        /**
+         * insertar concepto
+         */
         function insertar_concepto($concepto)
         {
             $sql = "INSERT INTO declaraciones (`declaraciones`, `fecha_creacion`, `usuario_creacion`) 
@@ -37,6 +43,22 @@
             }
                         
             $this->conexion->cerrar();               
+        }
+
+        /**
+         * eliminar concepto
+         */
+        function eliminar_concepto($id_concepto)
+        {
+            $sql = "DELETE FROM declaraciones WHERE `id_declaraciones` = $id_concepto";
+
+            if($this->conexion->conexion->query($sql) === TRUE ) {
+                echo "CORRECTO!!!";
+            } else {
+                echo "ERROR!!!";
+            }
+                        
+            $this->conexion->cerrar();  
         }
     }
 
