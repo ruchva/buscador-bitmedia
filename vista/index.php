@@ -46,7 +46,7 @@
                 </div>
                 <br />
                 <a href="#" onclick="copy();" id="botonCopiar" class="btn btn-primary">COPIAR</a>
-                <a href="#" onclick="limpiarResultado();" id="botonLimpiar" class="btn btn-primary">LIMPIAR</a>
+                <a href="#" onclick="limpiarResultado();" id="botonLimpiar" class="btn btn-secondary">LIMPIAR</a>
             </div>
         </div>
     </div>
@@ -64,8 +64,8 @@
                         </div>
                     </div>
                     <br />
-                    <input type="button" id="guardar" value="AGREGAR" class="btn btn-primary" />
-                    <a href="#" onclick="limpiarNuevoConcepto();" id="botonLimpiarNuevoConcepto" class="btn btn-primary">LIMPIAR</a>
+                    <input type="button" id="guardar" value="AGREGAR" class="btn btn-success" />
+                    <a href="#" onclick="limpiarNuevoConcepto();" id="botonLimpiarNuevoConcepto" class="btn btn-secondary">LIMPIAR</a>
                 </form>
             </div>
         </div>
@@ -84,7 +84,7 @@
                         </div>                    
                     </div>
                     <br />
-                    <input type="button" id="eliminar" value="ELIMINAR" class="btn btn-primary" />
+                    <input type="button" id="eliminar" value="ELIMINAR" class="btn btn-danger" />
                 </form>
             </div>
         </div>
